@@ -1,0 +1,4 @@
+verilog work "ipcore_dir/pll.v"
+verilog work "rtl/usb_interface.v"
+verilog work "rtl/reset_delay.v"
+verilog work "rtl/usblogic.v"

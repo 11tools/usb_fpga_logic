@@ -1,0 +1,90 @@
+##
+NET sys_clk LOC = T8 | TNM_NET = sys_clk_pin | IOSTANDARD = "LVCMOS33";
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+##
+
+
+########LED Pin define#####################
+NET led_a                        		       LOC = P6 | IOSTANDARD = "LVCMOS33";       ## LED1
+NET led_b                       	          LOC = M6 | IOSTANDARD = "LVCMOS33";       ## LED2
+NET led_c                                    LOC = M4 | IOSTANDARD = "LVCMOS33";       ## LED3
+NET led_d                                    LOC = E4 | IOSTANDARD = "LVCMOS33";       ## LED
+
+
+NET din<0>                        		       LOC = R16 | IOSTANDARD = "LVCMOS33";       ## J7P12
+NET din<1>                       	          LOC = P15 | IOSTANDARD = "LVCMOS33";       ## J7P11
+NET din<2>                                    LOC = L12 | IOSTANDARD = "LVCMOS33";       ## J7P14
+NET din<3>                                    LOC = N14 | IOSTANDARD = "LVCMOS33";       ## J7P13
+NET din<4>                                    LOC = T15 | IOSTANDARD = "LVCMOS33";       ## J7P16
+NET din<5>                                    LOC = R15 | IOSTANDARD = "LVCMOS33";       ## J7P15
+NET din<6>                                    LOC = T14 | IOSTANDARD = "LVCMOS33";       ## J7P18
+NET din<7>                                    LOC = R14 | IOSTANDARD = "LVCMOS33";       ## J7P17
+NET din<8>                                    LOC = R12 | IOSTANDARD = "LVCMOS33";       ## J7P20
+NET din<9>                                    LOC = T13 | IOSTANDARD = "LVCMOS33";       ## J7P19
+NET din<10>                        		       LOC = M9 | IOSTANDARD = "LVCMOS33";        ## J7P33
+NET din<11>                       	          LOC = L7 | IOSTANDARD = "LVCMOS33";        ## J7P34
+NET din<12>                                   LOC = P9 | IOSTANDARD = "LVCMOS33";        ## J7P31
+NET din<13>                                   LOC = N9 | IOSTANDARD = "LVCMOS33";        ## J7P32
+NET din<14>                                   LOC = M10 | IOSTANDARD = "LVCMOS33";       ## J7P29
+NET din<15>                                   LOC = L10 | IOSTANDARD = "LVCMOS33";       ## J7P30
+
+NET "pa0" LOC = H11;
+NET "usb_flaga" LOC = F12;
+NET "usb_flagb" LOC = F14;
+NET "usb_flagc" LOC = F13;
+NET "usb_sloe" LOC = G14;
+NET "usb_slrd" LOC = K11;
+NET "usb_slwr" LOC = J12;
+NET "usb_slcs" LOC = G16;
+NET "usb_ifclk" LOC = G12;
+NET "usb_fifoaddr[1]" LOC = H14;
+NET "usb_fifoaddr[0]" LOC = H13;
+NET "usb_fd[15]" LOC = J13;
+NET "usb_fd[14]" LOC = K14;
+NET "usb_fd[13]" LOC = K12;
+NET "usb_fd[12]" LOC = K15;
+NET "usb_fd[11]" LOC = K16;
+NET "usb_fd[10]" LOC = J16;
+NET "usb_fd[9]" LOC = H16;
+NET "usb_fd[8]" LOC = H15;
+NET "usb_fd[7]" LOC = F16;
+NET "usb_fd[6]" LOC = F15;
+NET "usb_fd[5]" LOC = E16;
+NET "usb_fd[4]" LOC = E15;
+NET "usb_fd[3]" LOC = B16;
+NET "usb_fd[2]" LOC = C15;
+NET "usb_fd[1]" LOC = C16;
+NET "usb_fd[0]" LOC = D16;
+
+
+NET "usb_fd[15]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[14]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[13]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[12]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[11]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[10]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[9]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[8]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[7]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[6]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[5]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[4]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[3]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[2]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[1]" IOSTANDARD = LVCMOS33;
+NET "usb_fd[0]" IOSTANDARD = LVCMOS33;
+NET "usb_fifoaddr[1]" IOSTANDARD = LVCMOS33;
+NET "usb_fifoaddr[0]" IOSTANDARD = LVCMOS33;
+
+NET "pa0" IOSTANDARD = LVCMOS33;
+
+NET "usb_flaga" IOSTANDARD = LVCMOS33;
+NET "usb_flagb" IOSTANDARD = LVCMOS33;
+NET "usb_flagc" IOSTANDARD = LVCMOS33;
+NET "usb_slcs" IOSTANDARD = LVCMOS33;
+NET "usb_sloe" IOSTANDARD = LVCMOS33;
+NET "usb_slrd" IOSTANDARD = LVCMOS33;
+NET "usb_ifclk" IOSTANDARD = LVCMOS33;
+# PlanAhead Generated IO constraints 
+
+NET "usb_slwr" IOSTANDARD = LVCMOS33;

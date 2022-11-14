@@ -1,0 +1,17 @@
+PROMGEN: Xilinx Prom Generator P.20131013
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+promgen -w -p mcs -c FF -o D:\develop\fpga_usb_logic\hardware\fpga\usblogic//usblogic -s 2048 -u 0 D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.bit -spi 
+
+PROM D:\develop\fpga_usb_logic\hardware\fpga\usblogic\usblogic.prm map: Sun Nov 13 13:15:59 2022
+
+Calculating PROM checksum with fill value ff
+
+Format        Mcs86 (32-bit)
+Size          2048K
+PROM start    0000:0000
+PROM end      001f:ffff
+PROM checksum 18d7cf77
+
+        Addr1        Addr2                     Date File(s)
+    0000:0000    0007:1543     Nov 13 13:11:44 2022 D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.bit

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\develop\fpga_usb_logic\hardware\fpga\usblogic\usblogic.ncd
+OUTFILE=D:\develop\fpga_usb_logic\hardware\fpga\usblogic\usblogic.bit
+FAMILY=Spartan6
+PART=xc6slx16-2ftg256
+WORKINGDIR=D:\develop\fpga_usb_logic\hardware\fpga\usblogic
+LICENSE=WebPack
+USER_INFO=__0_0_0

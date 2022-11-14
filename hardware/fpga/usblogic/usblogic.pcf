@@ -1,0 +1,104 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Nov 13 13:11:25 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "din<3>" LOCATE = SITE "N14" LEVEL 1;
+COMP "usb_flaga" LOCATE = SITE "F12" LEVEL 1;
+COMP "din<4>" LOCATE = SITE "T15" LEVEL 1;
+COMP "usb_flagb" LOCATE = SITE "F14" LEVEL 1;
+COMP "usb_flagc" LOCATE = SITE "F13" LEVEL 1;
+COMP "din<5>" LOCATE = SITE "R15" LEVEL 1;
+COMP "sys_clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "din<6>" LOCATE = SITE "T14" LEVEL 1;
+COMP "din<7>" LOCATE = SITE "R14" LEVEL 1;
+COMP "usb_slwr" LOCATE = SITE "J12" LEVEL 1;
+COMP "din<8>" LOCATE = SITE "R12" LEVEL 1;
+COMP "din<9>" LOCATE = SITE "T13" LEVEL 1;
+COMP "usb_fifoaddr<0>" LOCATE = SITE "H13" LEVEL 1;
+COMP "usb_fifoaddr<1>" LOCATE = SITE "H14" LEVEL 1;
+COMP "din<10>" LOCATE = SITE "M9" LEVEL 1;
+COMP "usb_ifclk" LOCATE = SITE "G12" LEVEL 1;
+COMP "din<11>" LOCATE = SITE "L7" LEVEL 1;
+COMP "din<12>" LOCATE = SITE "P9" LEVEL 1;
+COMP "din<13>" LOCATE = SITE "N9" LEVEL 1;
+COMP "din<14>" LOCATE = SITE "M10" LEVEL 1;
+COMP "usb_fd<10>" LOCATE = SITE "J16" LEVEL 1;
+COMP "din<15>" LOCATE = SITE "L10" LEVEL 1;
+COMP "usb_fd<11>" LOCATE = SITE "K16" LEVEL 1;
+COMP "usb_fd<12>" LOCATE = SITE "K15" LEVEL 1;
+COMP "usb_fd<13>" LOCATE = SITE "K12" LEVEL 1;
+COMP "usb_fd<14>" LOCATE = SITE "K14" LEVEL 1;
+COMP "usb_fd<15>" LOCATE = SITE "J13" LEVEL 1;
+COMP "usb_fd<0>" LOCATE = SITE "D16" LEVEL 1;
+COMP "usb_fd<1>" LOCATE = SITE "C16" LEVEL 1;
+COMP "usb_fd<2>" LOCATE = SITE "C15" LEVEL 1;
+COMP "usb_fd<3>" LOCATE = SITE "B16" LEVEL 1;
+COMP "usb_fd<4>" LOCATE = SITE "E15" LEVEL 1;
+COMP "usb_fd<5>" LOCATE = SITE "E16" LEVEL 1;
+COMP "usb_fd<6>" LOCATE = SITE "F15" LEVEL 1;
+COMP "usb_fd<7>" LOCATE = SITE "F16" LEVEL 1;
+COMP "usb_fd<8>" LOCATE = SITE "H15" LEVEL 1;
+COMP "usb_fd<9>" LOCATE = SITE "H16" LEVEL 1;
+COMP "usb_slcs" LOCATE = SITE "G16" LEVEL 1;
+COMP "pa0" LOCATE = SITE "H11" LEVEL 1;
+COMP "usb_sloe" LOCATE = SITE "G14" LEVEL 1;
+COMP "usb_slrd" LOCATE = SITE "K11" LEVEL 1;
+COMP "led_a" LOCATE = SITE "P6" LEVEL 1;
+COMP "led_b" LOCATE = SITE "M6" LEVEL 1;
+COMP "led_c" LOCATE = SITE "M4" LEVEL 1;
+COMP "led_d" LOCATE = SITE "E4" LEVEL 1;
+COMP "din<0>" LOCATE = SITE "R16" LEVEL 1;
+COMP "din<1>" LOCATE = SITE "P15" LEVEL 1;
+COMP "din<2>" LOCATE = SITE "L12" LEVEL 1;
+PIN usb_sinterface_inst/ODDR2_inst1_pins<1> = BEL
+        "usb_sinterface_inst/ODDR2_inst1" PINNAME CK0;
+PIN usb_sinterface_inst/ODDR2_inst1_pins<2> = BEL
+        "usb_sinterface_inst/ODDR2_inst1" PINNAME CK1;
+TIMEGRP pll_inst_clkout0 = BEL "datas_0" BEL "datas_1" BEL "datas_2" BEL
+        "datas_3" BEL "datas_4" BEL "datas_5" BEL "datas_6" BEL "datas_7" BEL
+        "datas_8" BEL "datas_9" BEL "datas_10" BEL "datas_11" BEL "datas_12"
+        BEL "datas_13" BEL "datas_14" BEL "datas_15" BEL
+        "reset_delay_inst/oRESET" BEL "reset_delay_inst/Cont_1" BEL
+        "reset_delay_inst/Cont_2" BEL "reset_delay_inst/Cont_3" BEL
+        "reset_delay_inst/Cont_4" BEL "reset_delay_inst/Cont_5" BEL
+        "reset_delay_inst/Cont_6" BEL "reset_delay_inst/Cont_7" BEL
+        "reset_delay_inst/Cont_8" BEL "reset_delay_inst/Cont_9" BEL
+        "reset_delay_inst/Cont_10" BEL "reset_delay_inst/Cont_11" BEL
+        "reset_delay_inst/Cont_12" BEL "reset_delay_inst/Cont_13" BEL
+        "reset_delay_inst/Cont_14" BEL "reset_delay_inst/Cont_15" BEL
+        "reset_delay_inst/Cont_16" BEL "reset_delay_inst/Cont_17" BEL
+        "reset_delay_inst/Cont_18" BEL "reset_delay_inst/Cont_19" BEL
+        "pll_inst/clkout1_buf" BEL "usb_sinterface_inst/STATE_FSM_FFd1" BEL
+        "usb_sinterface_inst/u_slwr" BEL "usb_sinterface_inst/led" BEL
+        "usb_sinterface_inst/u_data_out_15" BEL
+        "usb_sinterface_inst/u_data_out_14" BEL
+        "usb_sinterface_inst/u_data_out_13" BEL
+        "usb_sinterface_inst/u_data_out_12" BEL
+        "usb_sinterface_inst/u_data_out_11" BEL
+        "usb_sinterface_inst/u_data_out_10" BEL
+        "usb_sinterface_inst/u_data_out_9" BEL
+        "usb_sinterface_inst/u_data_out_8" BEL
+        "usb_sinterface_inst/u_data_out_7" BEL
+        "usb_sinterface_inst/u_data_out_6" BEL
+        "usb_sinterface_inst/u_data_out_5" BEL
+        "usb_sinterface_inst/u_data_out_4" BEL
+        "usb_sinterface_inst/u_data_out_3" BEL
+        "usb_sinterface_inst/u_data_out_2" BEL
+        "usb_sinterface_inst/u_data_out_1" BEL
+        "usb_sinterface_inst/u_data_out_0" BEL "reset_delay_inst/Cont_0" PIN
+        "usb_sinterface_inst/ODDR2_inst1_pins<1>" PIN
+        "usb_sinterface_inst/ODDR2_inst1_pins<2>" PIN
+        "usb_sinterface_inst/ODDR2_inst1_pins<1>" PIN
+        "usb_sinterface_inst/ODDR2_inst1_pins<2>";
+PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0> = BEL
+        "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0" PINNAME DIVCLK;
+PIN pll_inst/pll_base_inst/PLL_ADV_pins<2> = BEL
+        "pll_inst/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
+TIMEGRP sys_clk_pin = PIN "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_0_pins<0>" PIN
+        "pll_inst/pll_base_inst/PLL_ADV_pins<2>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+TS_pll_inst_clkout0 = PERIOD TIMEGRP "pll_inst_clkout0" TS_sys_clk_pin * 2
+        HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,216 @@
+C51 COMPILER V9.56.0.0   TWI                                                               11/09/2022 22:12:17 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE TWI
+OBJECT MODULE PLACED IN twi.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE twi.c OPTIMIZE(8,SPEED) DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1           #include <string.h>
+   2           #include <reg52.h>
+   3           #include <intrins.h>
+   4           
+   5           #include "twi.h"
+   6          
+   7          
+   8           #define DELAY_TIME 60
+   9           #define TRUE 1
+  10           #define FALSE 0
+  11          
+  12           sbit SCL=0x80 + 0;
+  13           sbit SDA=0x80 + 1;
+  14          
+  15          
+  16          
+  17          void DELAY(unsigned int t) 
+  18          {
+  19   1              while(t!=0)
+  20   1                  t--;
+  21   1      }
+  22          
+  23          void I2C_Start(void)
+  24          {
+  25   1              SDA=1;
+  26   1              SCL=1;
+  27   1              DELAY(DELAY_TIME);
+  28   1              SDA=0;
+  29   1              DELAY(DELAY_TIME);
+  30   1              SCL=0;
+  31   1              DELAY(DELAY_TIME);
+  32   1      }
+  33          
+  34          void I2C_Stop(void)
+  35          {
+  36   1              SDA=0;
+  37   1              SCL=1;
+  38   1              DELAY(DELAY_TIME);
+  39   1              SDA=1;
+  40   1              DELAY(DELAY_TIME);
+  41   1              SCL=0;
+  42   1              DELAY(DELAY_TIME);
+  43   1      }
+  44          
+  45          void SEND_0(void) 
+  46          {
+  47   1              SDA=0;
+  48   1              SCL=1;
+  49   1              DELAY(DELAY_TIME);
+  50   1              SCL=0;
+  51   1              DELAY(DELAY_TIME);
+  52   1      }
+  53          
+  54          void SEND_1(void)
+  55          {
+C51 COMPILER V9.56.0.0   TWI                                                               11/09/2022 22:12:17 PAGE 2   
+
+  56   1      
+  57   1              SDA=1;
+  58   1              SCL=1;
+  59   1              DELAY(DELAY_TIME);
+  60   1              SCL=0;
+  61   1              DELAY(DELAY_TIME);
+  62   1      }
+  63          
+  64          bit Check_Acknowledge(void)
+  65          {
+  66   1              /*?????????????????*/
+  67   1              SDA=1;
+  68   1              SCL=1;
+  69   1              DELAY(DELAY_TIME/2);
+  70   1              F0=SDA;
+  71   1              DELAY(DELAY_TIME/2);
+  72   1              SCL=0;
+  73   1              DELAY(DELAY_TIME);
+  74   1              if(F0==1)
+  75   1                  return FALSE;
+  76   1              return TRUE;
+  77   1      }
+  78          
+  79          bit Check_NAcknowledge(void)
+  80          {
+  81   1              /*?????????????????*/
+  82   1              SDA=1;
+  83   1              SCL=1;
+  84   1              DELAY(DELAY_TIME/2);
+  85   1              F0=SDA;
+  86   1              DELAY(DELAY_TIME/2);
+  87   1              SCL=0;
+  88   1              DELAY(DELAY_TIME);
+  89   1              if(F0==1)
+  90   1                  return TRUE;
+  91   1              return FALSE;
+  92   1      }
+  93          
+  94          
+  95          unsigned char ProbeSlaveAddr(void)
+  96          {
+  97   1        unsigned char i = 0;
+  98   1        bit ack;
+  99   1        for (i = 0; i < 255; i++)
+ 100   1        {
+ 101   2      
+ 102   2          I2C_Start();
+ 103   2          WriteI2CByte(i);
+ 104   2          ack = Check_Acknowledge();
+ 105   2          I2C_Stop();
+ 106   2          if (ack == TRUE) {
+ 107   3            return i;
+ 108   3          }
+ 109   2        }
+ 110   1      }
+ 111          
+ 112          
+ 113          
+ 114          void WriteI2CByte(char b)reentrant
+ 115          {
+ 116   1              char i;
+ 117   1              for(i=0;i<8;i++)
+C51 COMPILER V9.56.0.0   TWI                                                               11/09/2022 22:12:17 PAGE 3   
+
+ 118   1                  if((b<<i)&0x80)
+ 119   1                      SEND_1();
+ 120   1                  else
+ 121   1                      SEND_0();
+ 122   1      }
+ 123          
+ 124           
+ 125          
+ 126          char ReadI2CByte(void)reentrant
+ 127          {
+ 128   1              char b=0,i;
+ 129   1              for(i=0;i<8;i++)
+ 130   1              {
+ 131   2                  SDA=1;
+ 132   2                  SCL=1;
+ 133   2                  DELAY(10);
+ 134   2                  F0=SDA;
+ 135   2                  DELAY(10);
+ 136   2                  SCL=0;
+ 137   2                  if(F0==1)
+ 138   2                      {
+ 139   3                          b=b<<1;
+ 140   3                          b=b|0x01;
+ 141   3                      }
+ 142   2                  else
+ 143   2                      b=b<<1;
+ 144   2              }
+ 145   1              return b;
+ 146   1      } 
+ 147          
+ 148          
+ 149          
+ 150          void Write_One_Byte(unsigned char addr, unsigned char reg, unsigned char thedata)
+ 151          {
+ 152   1                bit acktemp=1;
+ 153   1                I2C_Start();
+ 154   1                WriteI2CByte(addr);
+ 155   1                acktemp=Check_Acknowledge();
+ 156   1                WriteI2CByte(reg);/*address*/
+ 157   1                acktemp=Check_Acknowledge();
+ 158   1                WriteI2CByte(thedata);/*thedata*/
+ 159   1                acktemp=Check_Acknowledge();
+ 160   1                I2C_Stop();
+ 161   1      }
+ 162          
+ 163          
+ 164          
+ 165          unsigned char Read_One_Byte(unsigned char addr, unsigned char reg)
+ 166          {         bit acktemp=1;
+ 167   1                unsigned char mydata;
+ 168   1                 /*read a byte from mem*/
+ 169   1                I2C_Start();
+ 170   1                WriteI2CByte(addr);/*address*/
+ 171   1                acktemp=Check_Acknowledge();
+ 172   1      
+ 173   1                WriteI2CByte(reg);
+ 174   1                acktemp=Check_Acknowledge();
+ 175   1                I2C_Stop();
+ 176   1        
+ 177   1                I2C_Start();
+ 178   1                WriteI2CByte(addr);/*address*/
+ 179   1                acktemp=Check_Acknowledge();
+C51 COMPILER V9.56.0.0   TWI                                                               11/09/2022 22:12:17 PAGE 4   
+
+ 180   1        
+ 181   1                mydata=ReadI2CByte();
+ 182   1                acktemp=Check_NAcknowledge();
+ 183   1                I2C_Stop();
+ 184   1                return mydata;
+ 185   1      }
+ 186          
+*** WARNING C291 IN LINE 110 OF twi.c: not every exit path returns a value
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    420    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       3
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

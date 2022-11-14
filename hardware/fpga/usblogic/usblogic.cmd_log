@@ -1,0 +1,113 @@
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 
+xst -intstyle ise -ifn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.xst" -ofn "D:/develop/fpga_usb_logic/hardware/fpga/usblogic/usblogic.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc rtl/usblogic.ucf -p xc6slx16-ftg256-2 usblogic.ngc usblogic.ngd  
+map -intstyle ise -p xc6slx16-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o usblogic_map.ncd usblogic.ngd usblogic.pcf 
+par -w -intstyle ise -ol high -mt off usblogic_map.ncd usblogic.ncd usblogic.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf 
+bitgen -intstyle ise -f usblogic.ut usblogic.ncd 

@@ -1,0 +1,343 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml usblogic.twx usblogic.ncd -o usblogic.twr usblogic.pcf
+
+Design file:              usblogic.ncd
+Physical constraint file: usblogic.pcf
+Device,package,speed:     xc6slx16,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   5.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.948ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: pll_inst/pll_base_inst/PLL_ADV/CLKOUT0
+  Logical resource: pll_inst/pll_base_inst/PLL_ADV/CLKOUT0
+  Location pin: PLL_ADV_X0Y0.CLKOUT0
+  Clock network: pll_inst/clkout0
+--------------------------------------------------------------------------------
+Slack: 15.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 2.500ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: pll_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Logical resource: pll_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Clock network: pll_inst/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 15.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 2.500ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: pll_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Logical resource: pll_inst/pll_base_inst/PLL_ADV/CLKIN1
+  Location pin: PLL_ADV_X0Y0.CLKIN1
+  Clock network: pll_inst/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_pll_inst_clkout0 = PERIOD TIMEGRP "pll_inst_clkout0" 
+TS_sys_clk_pin * 2         HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 702 paths analyzed, 167 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.078ns.
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/u_data_out_3 (SLICE_X37Y36.D3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.461ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_delay_inst/oRESET (FF)
+  Destination:          usb_sinterface_inst/u_data_out_3 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      2.398ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.023ns (0.551 - 0.574)
+  Source Clock:         clk_100m rising at 0.000ns
+  Destination Clock:    clk_100m falling at 5.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.224ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_delay_inst/oRESET to usb_sinterface_inst/u_data_out_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y31.AQ      Tcko                  0.430   reset_delay_inst/oRESET
+                                                       reset_delay_inst/oRESET
+    SLICE_X37Y36.D3      net (fanout=19)       1.595   reset_delay_inst/oRESET
+    SLICE_X37Y36.CLK     Tas                   0.373   usb_sinterface_inst/u_data_out<3>
+                                                       usb_sinterface_inst/u_data_out_3_rstpot
+                                                       usb_sinterface_inst/u_data_out_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.398ns (0.803ns logic, 1.595ns route)
+                                                       (33.5% logic, 66.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/led (SLICE_X31Y14.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.475ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_delay_inst/oRESET (FF)
+  Destination:          usb_sinterface_inst/led (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      2.381ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.026ns (0.456 - 0.482)
+  Source Clock:         clk_100m rising at 0.000ns
+  Destination Clock:    clk_100m falling at 5.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.224ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_delay_inst/oRESET to usb_sinterface_inst/led
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y31.AQ      Tcko                  0.430   reset_delay_inst/oRESET
+                                                       reset_delay_inst/oRESET
+    SLICE_X31Y14.C5      net (fanout=19)       1.578   reset_delay_inst/oRESET
+    SLICE_X31Y14.CLK     Tas                   0.373   usb_sinterface_inst/led
+                                                       usb_sinterface_inst/led_rstpot
+                                                       usb_sinterface_inst/led
+    -------------------------------------------------  ---------------------------
+    Total                                      2.381ns (0.803ns logic, 1.578ns route)
+                                                       (33.7% logic, 66.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/u_data_out_6 (SLICE_X36Y36.C3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     2.488ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_delay_inst/oRESET (FF)
+  Destination:          usb_sinterface_inst/u_data_out_6 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      2.371ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.023ns (0.551 - 0.574)
+  Source Clock:         clk_100m rising at 0.000ns
+  Destination Clock:    clk_100m falling at 5.000ns
+  Clock Uncertainty:    0.118ns
+
+  Clock Uncertainty:          0.118ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.224ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_delay_inst/oRESET to usb_sinterface_inst/u_data_out_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y31.AQ      Tcko                  0.430   reset_delay_inst/oRESET
+                                                       reset_delay_inst/oRESET
+    SLICE_X36Y36.C3      net (fanout=19)       1.592   reset_delay_inst/oRESET
+    SLICE_X36Y36.CLK     Tas                   0.349   usb_sinterface_inst/u_data_out<7>
+                                                       usb_sinterface_inst/u_data_out_6_rstpot
+                                                       usb_sinterface_inst/u_data_out_6
+    -------------------------------------------------  ---------------------------
+    Total                                      2.371ns (0.779ns logic, 1.592ns route)
+                                                       (32.9% logic, 67.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_pll_inst_clkout0 = PERIOD TIMEGRP "pll_inst_clkout0" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/u_data_out_7 (SLICE_X36Y36.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.417ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               usb_sinterface_inst/u_data_out_7 (FF)
+  Destination:          usb_sinterface_inst/u_data_out_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.417ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_100m falling at 15.000ns
+  Destination Clock:    clk_100m falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: usb_sinterface_inst/u_data_out_7 to usb_sinterface_inst/u_data_out_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y36.DQ      Tcko                  0.200   usb_sinterface_inst/u_data_out<7>
+                                                       usb_sinterface_inst/u_data_out_7
+    SLICE_X36Y36.D6      net (fanout=2)        0.027   usb_sinterface_inst/u_data_out<7>
+    SLICE_X36Y36.CLK     Tah         (-Th)    -0.190   usb_sinterface_inst/u_data_out<7>
+                                                       usb_sinterface_inst/u_data_out_7_rstpot
+                                                       usb_sinterface_inst/u_data_out_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.417ns (0.390ns logic, 0.027ns route)
+                                                       (93.5% logic, 6.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/STATE_FSM_FFd1 (SLICE_X33Y30.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.449ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               usb_sinterface_inst/STATE_FSM_FFd1 (FF)
+  Destination:          usb_sinterface_inst/STATE_FSM_FFd1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.449ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_100m falling at 15.000ns
+  Destination Clock:    clk_100m falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: usb_sinterface_inst/STATE_FSM_FFd1 to usb_sinterface_inst/STATE_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X33Y30.DQ      Tcko                  0.198   usb_sinterface_inst/STATE_FSM_FFd1
+                                                       usb_sinterface_inst/STATE_FSM_FFd1
+    SLICE_X33Y30.D6      net (fanout=19)       0.036   usb_sinterface_inst/STATE_FSM_FFd1
+    SLICE_X33Y30.CLK     Tah         (-Th)    -0.215   usb_sinterface_inst/STATE_FSM_FFd1
+                                                       usb_sinterface_inst/STATE_FSM_FFd1_rstpot
+                                                       usb_sinterface_inst/STATE_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.449ns (0.413ns logic, 0.036ns route)
+                                                       (92.0% logic, 8.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point usb_sinterface_inst/u_data_out_6 (SLICE_X36Y36.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.459ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               usb_sinterface_inst/u_data_out_6 (FF)
+  Destination:          usb_sinterface_inst/u_data_out_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.459ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_100m falling at 15.000ns
+  Destination Clock:    clk_100m falling at 15.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: usb_sinterface_inst/u_data_out_6 to usb_sinterface_inst/u_data_out_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y36.CQ      Tcko                  0.200   usb_sinterface_inst/u_data_out<7>
+                                                       usb_sinterface_inst/u_data_out_6
+    SLICE_X36Y36.C5      net (fanout=2)        0.069   usb_sinterface_inst/u_data_out<6>
+    SLICE_X36Y36.CLK     Tah         (-Th)    -0.190   usb_sinterface_inst/u_data_out<7>
+                                                       usb_sinterface_inst/u_data_out_6_rstpot
+                                                       usb_sinterface_inst/u_data_out_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.459ns (0.390ns logic, 0.069ns route)
+                                                       (85.0% logic, 15.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_pll_inst_clkout0 = PERIOD TIMEGRP "pll_inst_clkout0" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 7.334ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: pll_inst/clkout1_buf/I0
+  Logical resource: pll_inst/clkout1_buf/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: pll_inst/clkout0
+--------------------------------------------------------------------------------
+Slack: 7.751ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: usb_ifclk_OBUF/CLK0
+  Logical resource: usb_sinterface_inst/ODDR2_inst1/CK0
+  Location pin: OLOGIC_X18Y39.CLK0
+  Clock network: clk_100m
+--------------------------------------------------------------------------------
+Slack: 7.960ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.040ns (490.196MHz) (Tockper)
+  Physical resource: usb_ifclk_OBUF/CLK1
+  Logical resource: usb_sinterface_inst/ODDR2_inst1/CK1
+  Location pin: OLOGIC_X18Y39.CLK1
+  Clock network: clk_100m
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      5.000ns|     10.156ns|            0|            0|            0|          702|
+| TS_pll_inst_clkout0           |     10.000ns|      5.078ns|          N/A|            0|            0|          702|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock sys_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk        |    3.417|         |    2.539|    2.751|
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 702 paths, 0 nets, and 159 connections
+
+Design statistics:
+   Minimum period:   5.078ns{1}   (Maximum frequency: 196.928MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Nov 13 13:11:37 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4576 MB
+
+
+

@@ -1,0 +1,7 @@
+https://sigrok.org/wiki/Downloads
+
+下载
+pulseview-0.4.2-64bit-static-release-installer.exe
+
+下载
+sigrok-cli-0.7.2-x86_64-installer.exe

@@ -1,0 +1,9 @@
+"fw.obj",
+"bulkloop.obj",
+"dscr.obj",
+".\EZUSB.LIB",
+".\USBJmpTb.OBJ" 
+TO "bulkloop" 
+RAMSIZE(256) 
+CODE( 0x80-0x0FFF )
+XDATA( 0x1000 )
